@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    @apply
+
+    box-border;
+}
+
+:root {
+    --primary-color: #000;
+    --secondary-color: #fff;
+}
+
+html {
+    transition: all 0.5s ease-in;
+}
+
+html.dark {
+
+    --primary-color: #fff;
+    --secondary-color: #333;
+}
+
+html.dark {
+    @apply
+
+    bg-[#111]
+    text-primary-color
+}
+
+body {
+    @apply
+
+    font-heebo
+    h-[100vh]
+    overflow-hidden
+}
+
+h1 {
+    @apply
+
+    text-center
+    text-[20px]
+    pt-20
+    md:text-[25px]
+}
+
+p {
+    @apply
+
+    text-sm
+    text-center
+    text-gray-500
+}
+
+a {
+    @apply
+
+    text-blue-600
+}
+
+.toggle {
+    @apply
+
+    cursor-pointer
+    bg-primary-color
+    text-secondary-color
+    border-none
+    border-4
+    py-[10px]
+    px-[20px]
+    absolute
+    right-10
+    top-5
+    rounded-full
+    active:scale-95
+    focus:outline-none
+}
+
+.clock-container {
+    @apply
+
+    flex
+    flex-col
+    space-y-10
+    items-center
+    mx-auto
+    mt-16
+}
+
+.clock {
+    @apply
+
+    relative
+    w-[200px]
+    h-[200px]
+}
+
+.needle {
+    @apply
+
+    bg-primary-color
+    absolute
+    top-[50%]
+    left-[50%]
+    h-[65px]
+    w-[3px]
+    origin-bottom
+    transition-all
+    delay-500
+    ease-in
+}
+
+.needle.hour {
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle.minute {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+}
+
+.needle.second {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+    background-color: #e74c3c;
+}
+
+.center-point {
+    @apply
+
+    bg-needle
+    w-[10px]
+    h-[10px]
+    absolute
+    top-[50%]
+    left-[50%]
+    -translate-x-[50%]
+    -translate-y-[50%]
+    rounded-[50%]
+}
+
+.center-point::after {
+    content: '';
+    background-color: var(--primary-color);
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.time {
+    @apply
+
+    font-[60px]
+}
+
+.date {
+    @apply
+
+    text-[#aaa]
+    font-[14px]
+    tracking-wide
+    uppercase
+}
+
+.date .circle {
+    @apply
+
+    bg-primary-color
+    text-secondary-color
+    rounded-[50%]
+    h-[30px]
+    w-[30px]
+    inline-flex
+    items-center
+    justify-center
+    transition-all
+    delay-500
+    ease-in
+    font-[12px]
+    leading-4
+}
+
